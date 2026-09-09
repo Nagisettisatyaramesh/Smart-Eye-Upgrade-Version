@@ -1,0 +1,313 @@
+{% extends "website/base.html" %}
+{% block content %}
+
+<section class="hero">
+  <div class="wrap hero-top">
+    <span class="eyebrow">Quality Management for Medical Devices</span>
+    <h1>Run design controls, risk, and CAPA in one connected quality system.</h1>
+    <p class="lead">SmartEye eQMS gives medical device teams a single workspace for document control, risk management, complaint handling, and audit readiness — built around the standards your notified body already expects.</p>
+    <div class="hero-actions">
+      <a href="#consult" class="btn btn-primary">Request a consultation</a>
+      <a href="{% url 'website:login' %}" class="btn btn-ghost">Sign in to workspace</a>
+    </div>
+
+    <div class="trace-wrap" aria-hidden="true">
+      <svg class="trace-svg" viewBox="0 0 980 180">
+        <path class="trace-line" d="M0,90 L120,90 L150,34 L182,140 L214,64 L250,90 L430,90 L462,26 L494,150 L526,58 L560,90 L740,90 L772,34 L804,140 L836,64 L870,90 L980,90" />
+        <circle class="trace-node" cx="250" cy="90" r="5" />
+        <text class="trace-label" x="250" y="118" text-anchor="middle">UR</text>
+        <circle class="trace-node" cx="560" cy="90" r="5" />
+        <text class="trace-label" x="560" y="118" text-anchor="middle">DO</text>
+        <circle class="trace-node" cx="870" cy="90" r="5" />
+        <text class="trace-label" x="870" y="118" text-anchor="middle">VER</text>
+        <circle class="trace-node" cx="980" cy="90" r="5" />
+        <text class="trace-label" x="965" y="118" text-anchor="end">VAL</text>
+        <circle class="trace-pulse" cx="0" cy="90" r="4.5" />
+      </svg>
+    </div>
+  </div>
+  <div class="stat-strip">
+    <div class="wrap stat-strip-grid">
+      <div class="stat"><b>06</b><span>Core quality modules</span></div>
+      <div class="stat"><b>06</b><span>Frameworks referenced</span></div>
+      <div class="stat"><b>24/7</b><span>Workspace access</span></div>
+      <div class="stat"><b>100%</b><span>Traceable records</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="block tint" id="preview">
+  <div class="wrap">
+    <div class="section-head center" data-reveal>
+      <span class="kicker">Product Preview</span>
+      <h2>What signing in actually looks like</h2>
+      <p>The authenticated workspace, shown here with the same sample data you'd see after signing in — no separate marketing mockup.</p>
+    </div>
+    <div class="preview-frame" data-reveal>
+      <svg class="preview-svg" viewBox="0 0 960 580" role="img" aria-label="SmartEye eQMS workspace showing metrics for open CAPAs, documents pending review, and audits due, plus an action queue of quality tasks">
+        <defs>
+          <clipPath id="previewClip"><rect x="0" y="0" width="960" height="580" rx="20" /></clipPath>
+        </defs>
+        <g clip-path="url(#previewClip)">
+          <rect x="0" y="0" width="960" height="580" fill="var(--void-2)" />
+          <rect x="0" y="0" width="960" height="48" fill="var(--void)" />
+          <circle cx="24" cy="24" r="5" fill="#3a4a68" />
+          <circle cx="44" cy="24" r="5" fill="#3a4a68" />
+          <circle cx="64" cy="24" r="5" fill="var(--signal)" />
+
+          <rect x="0" y="48" width="170" height="532" fill="var(--void)" />
+          <rect x="16" y="86" width="138" height="26" rx="6" fill="rgba(47,214,167,0.14)" />
+          <rect x="16" y="86" width="3" height="26" fill="var(--signal)" />
+          <text class="mono" x="32" y="103" font-size="12" font-weight="500" fill="var(--signal)">Workspace</text>
+          <text class="mono" x="32" y="145" font-size="12" fill="var(--mist)">Documents</text>
+          <text class="mono" x="32" y="187" font-size="12" fill="var(--mist)">Risk register</text>
+          <text class="mono" x="32" y="229" font-size="12" fill="var(--mist)">Audits</text>
+
+          <rect x="170" y="48" width="790" height="532" fill="var(--surface)" />
+          <text x="210" y="100" font-size="23" font-weight="700" fill="var(--ink)" style="font-family:var(--font-display);">Welcome back, admin</text>
+          <text x="210" y="126" font-size="13" fill="var(--ink-soft)">Here's what's moving across your quality system today.</text>
+
+          <g>
+            <rect x="210" y="160" width="220" height="110" rx="14" fill="var(--surface)" stroke="var(--line)" />
+            <text class="mono" x="228" y="192" font-size="10" letter-spacing="0.05em" fill="var(--ink-soft)">OPEN CAPAS</text>
+            <text class="mono" x="228" y="228" font-size="28" font-weight="500" fill="var(--signal)">07</text>
+            <text class="mono" x="228" y="250" font-size="11" fill="var(--signal-dim)">-2 this week</text>
+          </g>
+          <g>
+            <rect x="450" y="160" width="220" height="110" rx="14" fill="var(--surface)" stroke="var(--line)" />
+            <text class="mono" x="468" y="192" font-size="10" letter-spacing="0.05em" fill="var(--ink-soft)">DOCS PENDING</text>
+            <text class="mono" x="468" y="228" font-size="28" font-weight="500" fill="var(--signal)">12</text>
+            <text class="mono" x="468" y="250" font-size="11" fill="var(--signal-dim)">+3 this week</text>
+          </g>
+          <g>
+            <rect x="690" y="160" width="220" height="110" rx="14" fill="var(--surface)" stroke="var(--line)" />
+            <text class="mono" x="708" y="192" font-size="10" letter-spacing="0.05em" fill="var(--ink-soft)">AUDITS DUE</text>
+            <text class="mono" x="708" y="228" font-size="28" font-weight="500" fill="var(--signal)">02</text>
+            <text class="mono" x="708" y="250" font-size="11" fill="var(--signal-dim)">next in 9 days</text>
+          </g>
+
+          <rect x="210" y="300" width="700" height="230" rx="14" fill="var(--surface)" stroke="var(--line)" />
+          <text x="230" y="332" font-size="14" font-weight="600" fill="var(--ink)">Action queue</text>
+          <line x1="210" y1="346" x2="910" y2="346" stroke="var(--line)" />
+
+          <text x="230" y="376" font-size="13" font-weight="600" fill="var(--ink)">Approve DHF update — Infusion Pump</text>
+          <rect x="230" y="384" width="104" height="19" rx="9" fill="rgba(47,214,167,0.1)" />
+          <text class="mono" x="242" y="397" font-size="10" fill="var(--signal-dim)">DESIGN CONTROL</text>
+          <text class="mono" x="890" y="376" font-size="12" fill="var(--ink-soft)" text-anchor="end">Due in 2 days</text>
+          <line x1="210" y1="412" x2="910" y2="412" stroke="var(--line)" />
+
+          <text x="230" y="442" font-size="13" font-weight="600" fill="var(--ink)">Close CAPA-0114 — Labeling deviation</text>
+          <rect x="230" y="450" width="56" height="19" rx="9" fill="rgba(47,214,167,0.1)" />
+          <text class="mono" x="242" y="463" font-size="10" fill="var(--signal-dim)">CAPA</text>
+          <text class="mono" x="890" y="442" font-size="12" fill="var(--ink-soft)" text-anchor="end">Due in 3 days</text>
+          <line x1="210" y1="478" x2="910" y2="478" stroke="var(--line)" />
+
+          <text x="230" y="508" font-size="13" font-weight="600" fill="var(--ink)">Review risk file RA-208 — Software update</text>
+          <rect x="230" y="516" width="112" height="19" rx="9" fill="rgba(47,214,167,0.1)" />
+          <text class="mono" x="242" y="529" font-size="10" fill="var(--signal-dim)">RISK MANAGEMENT</text>
+          <text class="mono" x="890" y="508" font-size="12" fill="var(--ink-soft)" text-anchor="end">Due in 5 days</text>
+        </g>
+        <rect x="0.75" y="0.75" width="958.5" height="578.5" rx="20" fill="none" stroke="var(--line-dark)" stroke-width="1.5" />
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="modules">
+  <div class="wrap">
+    <div class="section-head center" data-reveal>
+      <span class="kicker">Product Modules</span>
+      <h2>Everything a device quality team touches, in one place</h2>
+      <p>Each module reflects a stage of the product quality lifecycle, from initial design input through post-market surveillance.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card" data-reveal>
+        <div class="icon">DC</div>
+        <h3>Document Control</h3>
+        <p>Version-controlled SOPs, work instructions, and specifications with review and approval routing.</p>
+      </div>
+      <div class="card" data-reveal>
+        <div class="icon">DH</div>
+        <h3>Design Controls</h3>
+        <p>Design history file records linking user needs, design inputs, outputs, and verification &amp; validation.</p>
+      </div>
+      <div class="card" data-reveal>
+        <div class="icon">RM</div>
+        <h3>Risk Management</h3>
+        <p>Hazard analysis, risk estimation, and mitigation tracking aligned to ISO 14971.</p>
+      </div>
+      <div class="card" data-reveal>
+        <div class="icon">CA</div>
+        <h3>CAPA Management</h3>
+        <p>Root cause investigation, corrective action plans, and effectiveness checks in one record.</p>
+      </div>
+      <div class="card" data-reveal>
+        <div class="icon">CH</div>
+        <h3>Complaint Handling</h3>
+        <p>Intake, triage, and regulatory reportability assessment for post-market complaints.</p>
+      </div>
+      <div class="card" data-reveal>
+        <div class="icon">AM</div>
+        <h3>Audit Management</h3>
+        <p>Internal and supplier audit scheduling, findings, and closure tracking.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block tint" id="frameworks">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="kicker">Regulatory Frameworks</span>
+      <h2>Structured around the standards your team already works to</h2>
+      <p>Module content and templates reference the following frameworks.</p>
+    </div>
+    <div class="chip-row" data-reveal>
+      <span class="chip">FDA 21 CFR Part 820</span>
+      <span class="chip">ISO 13485:2016</span>
+      <span class="chip">EU MDR 2017/745</span>
+      <span class="chip">ISO 14971</span>
+      <span class="chip">IEC 62304</span>
+      <span class="chip">ISO 27001</span>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="integrations">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="kicker">Integrations</span>
+      <h2>Designed to sit alongside the systems you already run</h2>
+      <p>The list below describes intended integration points. No third-party integrations are configured or connected in this codebase.</p>
+    </div>
+    <div class="grid-4" data-reveal>
+      <div class="integration">ERP Systems</div>
+      <div class="integration">PLM Systems</div>
+      <div class="integration">Salesforce</div>
+      <div class="integration">Microsoft 365</div>
+      <div class="integration">Slack</div>
+      <div class="integration">E-signature Providers</div>
+      <div class="integration">Single Sign-On</div>
+      <div class="integration">BI &amp; Reporting Tools</div>
+    </div>
+  </div>
+</section>
+
+<section class="block tint" id="traceability">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="kicker">Traceability</span>
+      <h2>Sample requirement traceability record</h2>
+      <p>Illustrative data shown for presentation purposes only.</p>
+    </div>
+    <div class="table-wrap" data-reveal>
+      <table class="trace">
+        <thead>
+          <tr>
+            <th scope="col">Requirement ID</th>
+            <th scope="col">Description</th>
+            <th scope="col">Design Output</th>
+            <th scope="col">Verification</th>
+            <th scope="col">Validation</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>UR-101</td>
+            <td>Device shall alert user within 2s of fault detection</td>
+            <td>DO-101 Alarm firmware spec</td>
+            <td>VER-101 Bench test</td>
+            <td>VAL-101 Simulated use study</td>
+            <td><span class="status-pill status-pass">Complete</span></td>
+          </tr>
+          <tr>
+            <td>UR-102</td>
+            <td>Battery shall sustain 8 hours continuous use</td>
+            <td>DO-102 Power management design</td>
+            <td>VER-102 Endurance test</td>
+            <td>VAL-102 Field trial</td>
+            <td><span class="status-pill status-pass">Complete</span></td>
+          </tr>
+          <tr>
+            <td>UR-103</td>
+            <td>Software shall log all user actions for audit</td>
+            <td>DO-103 Audit trail module</td>
+            <td>VER-103 Code review &amp; unit test</td>
+            <td>VAL-103 Usability study</td>
+            <td><span class="status-pill status-progress">In progress</span></td>
+          </tr>
+          <tr>
+            <td>UR-104</td>
+            <td>Enclosure shall meet IP22 ingress rating</td>
+            <td>DO-104 Mechanical drawing rev C</td>
+            <td>VER-104 IP ingress test</td>
+            <td>VAL-104 —</td>
+            <td><span class="status-pill status-progress">In progress</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="consult">
+  <div class="wrap consult">
+    <div class="consult-copy" data-reveal>
+      <span class="eyebrow on-light">Get in touch</span>
+      <h2>Request a consultation</h2>
+      <p>Tell us about your team and we'll follow up to walk through how SmartEye eQMS could fit your quality processes.</p>
+      <ul class="consult-list">
+        <li><span class="arrow" aria-hidden="true">&#10148;</span> A quality specialist reviews your submission</li>
+        <li><span class="arrow" aria-hidden="true">&#10148;</span> We follow up by email to schedule a call</li>
+        <li><span class="arrow" aria-hidden="true">&#10148;</span> No commitment required to talk with our team</li>
+      </ul>
+    </div>
+    <div class="form-card" data-reveal>
+      <form method="post" action="{% url 'website:home' %}#consult">
+        {% csrf_token %}
+        <div class="field">
+          <label for="{{ form.name.id_for_label }}">Full name</label>
+          {{ form.name }}
+          {{ form.name.errors }}
+        </div>
+        <div class="field">
+          <label for="{{ form.email.id_for_label }}">Work email</label>
+          {{ form.email }}
+          {{ form.email.errors }}
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="{{ form.company.id_for_label }}">Company</label>
+            {{ form.company }}
+            {{ form.company.errors }}
+          </div>
+          <div class="field">
+            <label for="{{ form.phone.id_for_label }}">Phone</label>
+            {{ form.phone }}
+            {{ form.phone.errors }}
+          </div>
+        </div>
+        <div class="field">
+          <label for="{{ form.company_size.id_for_label }}">Company size</label>
+          {{ form.company_size }}
+          {{ form.company_size.errors }}
+        </div>
+        <div class="field">
+          <label for="{{ form.interest.id_for_label }}">Area of interest</label>
+          {{ form.interest }}
+          {{ form.interest.errors }}
+        </div>
+        <div class="field">
+          <label for="{{ form.message.id_for_label }}">Message</label>
+          {{ form.message }}
+          {{ form.message.errors }}
+        </div>
+        <button type="submit" class="btn btn-primary form-submit">Submit request</button>
+        <p class="form-note">By submitting, you agree to be contacted about SmartEye eQMS.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

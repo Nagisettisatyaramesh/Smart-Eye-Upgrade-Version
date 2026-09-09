@@ -1,0 +1,69 @@
+{% extends "website/base.html" %}
+{% block title %}Resources — SmartEye eQMS{% endblock %}
+{% block content %}
+
+<section class="page-hero">
+  <div class="wrap" data-reveal>
+    <span class="eyebrow">Resources</span>
+    <h1>Notes on running a medical device quality system</h1>
+    <p>Short, practical reads on document control, risk, audits, and the standards behind them.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="kicker">Articles</span>
+      <h2>From the SmartEye eQMS team</h2>
+      <p>Sample write-ups for this project — original text, not published articles.</p>
+    </div>
+    <div class="grid-3">
+      {% for article in articles %}
+      <div class="card" data-reveal>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+          <span class="sample-tag" style="margin-left:0;">{{ article.tag }}</span>
+          <span style="font-family:var(--font-mono);font-size:0.74rem;color:var(--ink-soft);">{{ article.date }}</span>
+        </div>
+        <h3>{{ article.title }}</h3>
+        <p>{{ article.excerpt }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="block tint">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="kicker">Videos &amp; Media</span>
+      <h2>Watch instead of read</h2>
+      <p>Placeholder entries — no video files are hosted in this codebase.</p>
+    </div>
+    <div class="grid-3">
+      {% for item in media %}
+      <div class="card" data-reveal>
+        <div class="icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.6" /><path d="M10 8.5 L16 12 L10 15.5 Z" fill="currentColor" /></svg>
+        </div>
+        <h3>{{ item.title }}</h3>
+        <p style="font-family:var(--font-mono);color:var(--ink-soft);font-size:0.85rem;">{{ item.length }} watch</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="section-head center" style="margin-bottom:0;" data-reveal>
+      <span class="kicker">Get Started</span>
+      <h2>Have a question one of these didn't answer?</h2>
+      <p>Send it to us directly and a quality specialist will follow up.</p>
+      <div class="hero-actions" style="margin-top:28px;">
+        <a href="{% url 'website:contact' %}" class="btn btn-primary">Contact us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

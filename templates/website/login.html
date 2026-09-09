@@ -1,0 +1,23 @@
+{% extends "website/base.html" %}
+{% block title %}Sign in — SmartEye eQMS{% endblock %}
+{% block content %}
+<div class="auth-shell">
+  <div class="auth-card" data-reveal>
+    <span class="brand-mark" aria-hidden="true">{% include "website/_logo.html" %}</span>
+    <h1>Sign in</h1>
+    <p class="sub">Access the SmartEye eQMS workspace with your Django account.</p>
+    <form method="post" action="{% url 'website:login' %}">
+      {% csrf_token %}
+      <div class="field">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" autocomplete="username" required autofocus>
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" autocomplete="current-password" required>
+      </div>
+      <button type="submit" class="btn btn-primary form-submit">Sign in</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

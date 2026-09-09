@@ -1,0 +1,14 @@
+{% extends "website/base.html" %}
+{% block title %}Thank you — SmartEye eQMS{% endblock %}
+{% block content %}
+<div class="thanks-shell">
+  <div class="thanks-card" data-reveal>
+    <div class="thanks-mark">&#10003;</div>
+    <h1>Thanks — we've received your request</h1>
+    <p>A member of our team will follow up by email shortly. In the meantime, feel free to explore the product overview on the homepage.</p>
+    <div class="hero-actions" style="justify-content:center;margin-top:24px;">
+      <a href="{% url 'website:home' %}" class="btn btn-primary">Back to homepage</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends "website/base.html" %}
+{% block title %}Who We Are — SmartEye eQMS{% endblock %}
+{% block content %}
+
+<section class="page-hero">
+  <div class="wrap" data-reveal>
+    <span class="eyebrow">Who We Are</span>
+    <h1>A quality system built by people who read the standards, too</h1>
+    <p>SmartEye eQMS is designed around a simple idea: the tools your quality team uses every day should make it easier to stay compliant, not harder.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="kicker">Our Approach</span>
+      <h2>What shapes how we build SmartEye eQMS</h2>
+      <p>These principles guide every module, from document control to CAPA.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card" data-reveal>
+        <div class="icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 L20 7 L20 17 L12 22 L4 17 L4 7 Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" /><path d="M8.5 12.5 L11 15 L16 9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        </div>
+        <h3>Compliance-minded by default</h3>
+        <p>Modules are structured around the frameworks device teams already work to, not bolted on afterward.</p>
+      </div>
+      <div class="card" data-reveal>
+        <div class="icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="1.6" /><line x1="15.3" y1="15.3" x2="20" y2="20" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" /></svg>
+        </div>
+        <h3>Built for reviewers</h3>
+        <p>Traceability and audit evidence are treated as first-class output, not an export you assemble at the last minute.</p>
+      </div>
+      <div class="card" data-reveal>
+        <div class="icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 16 A8 8 0 0 1 20 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" /><line x1="12" y1="16" x2="15.5" y2="10.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" /><circle cx="12" cy="16" r="1.4" fill="currentColor" /></svg>
+        </div>
+        <h3>Practical over theoretical</h3>
+        <p>We'd rather ship a workflow your team will actually use than a feature that only looks good in a demo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block tint">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:0;" data-reveal>
+      <span class="kicker">Get in touch</span>
+      <h2>Want to know more?</h2>
+      <p>Reach out and we'll walk you through how the platform is put together.</p>
+    </div>
+    <div class="hero-actions" style="margin-top:24px;justify-content:flex-start;" data-reveal>
+      <a href="{% url 'website:contact' %}" class="btn btn-primary">Contact us</a>
+      <a href="{% url 'website:why_smarteye' %}" class="btn btn-ghost on-light">Why SmartEye eQMS</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

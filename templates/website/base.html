@@ -1,0 +1,67 @@
+{% load static %}<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}SmartEye eQMS — Quality Management for Medical Devices{% endblock %}</title>
+  <meta name="description" content="SmartEye eQMS is a quality management platform for medical device teams covering document control, design controls, risk management, CAPA, complaints, and audits.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <nav class="topnav" aria-label="Primary">
+    <div class="wrap">
+      <a href="{% url 'website:home' %}" class="brand">
+        <span class="brand-mark" aria-hidden="true">{% include "website/_logo.html" %}</span>
+        <span>SmartEye eQMS<small>Medical Device Quality</small></span>
+      </a>
+
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle menu">&#9776;</button>
+
+      <div class="navlinks" id="primary-nav">
+        <a href="{% url 'website:why_smarteye' %}">Why SmartEye eQMS</a>
+        <a href="{% url 'website:who_we_are' %}">Who We Are</a>
+        <a href="{% url 'website:resources' %}">Resources</a>
+        <a href="{% url 'website:contact' %}">Contact Us</a>
+        {% if user.is_authenticated %}
+          <a href="{% url 'website:workspace' %}">Workspace</a>
+          <form action="{% url 'website:logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="cta">Sign out</button>
+          </form>
+        {% else %}
+          <a href="{% url 'website:login' %}">Sign in</a>
+          <a href="{% url 'website:home' %}#consult" class="cta">Request a consultation</a>
+        {% endif %}
+      </div>
+    </div>
+  </nav>
+
+  {% if messages %}
+    <ul class="messages" role="alert">
+      <div class="wrap">
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+      </div>
+    </ul>
+  {% endif %}
+
+  <main id="main">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>&copy; {% now "Y" %} SmartEye eQMS. All rights reserved.</span>
+      <span class="foot-note">Product descriptions on this site are presentation content and do not represent validated compliance workflows.</span>
+    </div>
+  </footer>
+
+  <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

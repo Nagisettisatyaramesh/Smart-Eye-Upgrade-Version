@@ -1,0 +1,36 @@
+{% extends "website/base.html" %}
+{% block title %}Workspace — SmartEye eQMS{% endblock %}
+{% block content %}
+<div class="workspace-header">
+  <div class="wrap">
+    <span class="kicker-tag"><span class="dot"></span>Live workspace</span>
+    <h1>Welcome back, {{ user.get_full_name|default:user.username }}</h1>
+    <p>Here's what's moving across your quality system today.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="metrics-grid">
+    {% for metric in metrics %}
+    <div class="metric-card" data-reveal>
+      <div class="label">{{ metric.label }}</div>
+      <div class="value">{{ metric.value }}</div>
+      <div class="trend">{{ metric.trend }}</div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="queue-card" style="margin-bottom:56px;" data-reveal>
+    <h2>Action queue <span class="sample-tag">Sample data</span></h2>
+    {% for item in queue %}
+    <div class="queue-item">
+      <div>
+        <div class="title">{{ item.title }}</div>
+        <span class="owner">{{ item.owner }}</span>
+      </div>
+      <div class="due">{{ item.due }}</div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

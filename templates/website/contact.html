@@ -1,0 +1,80 @@
+{% extends "website/base.html" %}
+{% block title %}Contact Us — SmartEye eQMS{% endblock %}
+{% block content %}
+
+<section class="page-hero">
+  <div class="wrap" data-reveal>
+    <span class="eyebrow">Contact Us</span>
+    <h1>Talk to the SmartEye eQMS team</h1>
+    <p>Tell us a bit about your quality processes and we'll follow up to see whether SmartEye eQMS is a fit.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap consult">
+    <div class="consult-copy" data-reveal>
+      <h2>How to reach us</h2>
+      <p>The form is the fastest way to reach the team — submissions are saved and reviewed directly, no separate inbox to check.</p>
+      <ul class="contact-channels">
+        <li>
+          <span class="icon" aria-hidden="true">@</span>
+          <div><b>Submissions</b><span>Every request below is saved as a lead and reviewed by our team.</span></div>
+        </li>
+        <li>
+          <span class="icon" aria-hidden="true">&#9654;</span>
+          <div><b>Response time</b><span>We typically follow up by email within a few business days.</span></div>
+        </li>
+        <li>
+          <span class="icon" aria-hidden="true">?</span>
+          <div><b>Not ready to talk?</b><span>Read <a href="{% url 'website:why_smarteye' %}" style="color:var(--ink);text-decoration:underline;">Why SmartEye eQMS</a> first.</span></div>
+        </li>
+      </ul>
+    </div>
+    <div class="form-card" data-reveal>
+      <form method="post" action="{% url 'website:contact' %}">
+        {% csrf_token %}
+        <div class="field">
+          <label for="{{ form.name.id_for_label }}">Full name</label>
+          {{ form.name }}
+          {{ form.name.errors }}
+        </div>
+        <div class="field">
+          <label for="{{ form.email.id_for_label }}">Work email</label>
+          {{ form.email }}
+          {{ form.email.errors }}
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="{{ form.company.id_for_label }}">Company</label>
+            {{ form.company }}
+            {{ form.company.errors }}
+          </div>
+          <div class="field">
+            <label for="{{ form.phone.id_for_label }}">Phone</label>
+            {{ form.phone }}
+            {{ form.phone.errors }}
+          </div>
+        </div>
+        <div class="field">
+          <label for="{{ form.company_size.id_for_label }}">Company size</label>
+          {{ form.company_size }}
+          {{ form.company_size.errors }}
+        </div>
+        <div class="field">
+          <label for="{{ form.interest.id_for_label }}">Area of interest</label>
+          {{ form.interest }}
+          {{ form.interest.errors }}
+        </div>
+        <div class="field">
+          <label for="{{ form.message.id_for_label }}">Message</label>
+          {{ form.message }}
+          {{ form.message.errors }}
+        </div>
+        <button type="submit" class="btn btn-primary form-submit">Send message</button>
+        <p class="form-note">By submitting, you agree to be contacted about SmartEye eQMS.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

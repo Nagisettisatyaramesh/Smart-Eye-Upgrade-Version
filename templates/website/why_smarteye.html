@@ -1,0 +1,66 @@
+{% extends "website/base.html" %}
+{% block title %}Why SmartEye eQMS{% endblock %}
+{% block content %}
+
+<section class="page-hero">
+  <div class="wrap" data-reveal>
+    <span class="eyebrow">Why SmartEye eQMS</span>
+    <h1>Built around how medical device teams actually work</h1>
+    <p>SmartEye eQMS organizes the day-to-day work of a quality team — documents, risk, design control, and corrective action — around the core processes reviewers and auditors expect to see.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="kicker">Core QMS Processes</span>
+      <h2>Five process groups, one connected system</h2>
+      <p>Every module in SmartEye eQMS maps back to one of these process groups, so nothing lives in a spreadsheet on its own.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card" data-reveal>
+        <div class="icon">MGT</div>
+        <h3>Management</h3>
+        <p>Quality policy, quality objectives, management review, and resource planning that keep the system aligned to the business.</p>
+      </div>
+      <div class="card" data-reveal>
+        <div class="icon">PRD</div>
+        <h3>Product Realization</h3>
+        <p>Design and development control, risk management, supplier qualification, and production traceability.</p>
+      </div>
+      <div class="card" data-reveal>
+        <div class="icon">DOC</div>
+        <h3>Compliance &amp; Documentation</h3>
+        <p>Document control, record retention, and electronic signatures for the files your audits depend on.</p>
+      </div>
+      <div class="card" data-reveal>
+        <div class="icon">CAPA</div>
+        <h3>Monitoring &amp; Improvement</h3>
+        <p>Internal audits, nonconformance handling, CAPA, and post-market feedback in a single loop.</p>
+      </div>
+      <div class="card" data-reveal>
+        <div class="icon">SUP</div>
+        <h3>Support &amp; Enablement</h3>
+        <p>Training records, equipment calibration, and the software validation evidence that keeps your tools audit-ready.</p>
+      </div>
+      <div class="card" data-reveal>
+        <div class="icon">TRC</div>
+        <h3>Traceability Throughout</h3>
+        <p>Every requirement, design output, and verification record links back to the process group that owns it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block tint">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:24px;" data-reveal>
+      <span class="kicker">Get Started</span>
+      <h2>See how it would fit your team</h2>
+      <p>Tell us about your quality processes and we'll follow up with next steps.</p>
+    </div>
+    <a href="{% url 'website:contact' %}" class="btn btn-primary" data-reveal>Talk to our team</a>
+  </div>
+</section>
+
+{% endblock %}
