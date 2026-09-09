@@ -10,6 +10,21 @@ SECRET_KEY = config('SECRET_KEY', default='django-insecure-local-development-key
 DEBUG = config('DEBUG', default=False, cast=bool)
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='127.0.0.1,localhost', cast=Csv())
 
+# Vercel sets these automatically for every deployment; trust the
+# deployment's own hostname without requiring ALLOWED_HOSTS to be
+# configured by hand for every preview URL.
+VERCEL_URL = config('VERCEL_URL', default='')
+if VERCEL_URL:
+    ALLOWED_HOSTS.append(VERCEL_URL)
+if config('VERCEL', default=False, cast=bool):
+    ALLOWED_HOSTS.append('.vercel.app')
+
+CSRF_TRUSTED_ORIGINS = config('CSRF_TRUSTED_ORIGINS', default='', cast=Csv())
+if VERCEL_URL:
+    CSRF_TRUSTED_ORIGINS.append(f'https://{VERCEL_URL}')
+if config('VERCEL', default=False, cast=bool):
+    CSRF_TRUSTED_ORIGINS.append('https://*.vercel.app')
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
