@@ -6,23 +6,36 @@ from decouple import Csv, config
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+
+def _env_bool(value, default=False):
+    """Parse a boolean-ish env var without ever raising.
+
+    An env var typo or stray quote should never be able to crash
+    settings.py at import time and take down the whole site.
+    """
+    if value is None or value == '':
+        return default
+    return str(value).strip().strip('"\'').lower() in ('1', 'true', 'yes', 'on', 't', 'y')
+
+
 SECRET_KEY = config('SECRET_KEY', default='django-insecure-local-development-key')
-DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = _env_bool(config('DEBUG', default=''), default=False)
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='127.0.0.1,localhost', cast=Csv())
 
 # Vercel sets these automatically for every deployment; trust the
 # deployment's own hostname without requiring ALLOWED_HOSTS to be
 # configured by hand for every preview URL.
 VERCEL_URL = config('VERCEL_URL', default='')
+IS_VERCEL = _env_bool(config('VERCEL', default=''), default=False)
 if VERCEL_URL:
     ALLOWED_HOSTS.append(VERCEL_URL)
-if config('VERCEL', default=False, cast=bool):
+if IS_VERCEL:
     ALLOWED_HOSTS.append('.vercel.app')
 
 CSRF_TRUSTED_ORIGINS = config('CSRF_TRUSTED_ORIGINS', default='', cast=Csv())
 if VERCEL_URL:
     CSRF_TRUSTED_ORIGINS.append(f'https://{VERCEL_URL}')
-if config('VERCEL', default=False, cast=bool):
+if IS_VERCEL:
     CSRF_TRUSTED_ORIGINS.append('https://*.vercel.app')
 
 INSTALLED_APPS = [
@@ -90,7 +103,7 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': '/tmp/db.sqlite3' if config('VERCEL', default=False, cast=bool) else BASE_DIR / 'db.sqlite3',
+            'NAME': '/tmp/db.sqlite3' if IS_VERCEL else BASE_DIR / 'db.sqlite3',
         }
     }
 
