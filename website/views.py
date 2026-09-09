@@ -24,49 +24,69 @@ WORKSPACE_QUEUE = [
 
 # Sample article and media summaries for the Resources page. Original
 # writing for this project; not implemented content or real publications.
+# Photos are free-license Unsplash images (unsplash.com/license), hotlinked
+# directly from Unsplash's CDN rather than stored in this repo.
 RESOURCE_ARTICLES = [
     {
         'tag': 'Audits',
+        'slug': 'audits',
+        'accent': 'signal',
         'date': 'Feb 2026',
         'title': 'Preparing for your first ISO 13485 audit',
         'excerpt': 'The gaps that trip up first-time audits most often aren’t missing documents — they’re documents that exist but were never linked back to a design record.',
+        'photo': 'https://images.unsplash.com/photo-1758873263563-5ba4aa330799?fm=jpg&q=70&w=900&auto=format&fit=crop',
     },
     {
         'tag': 'ISO 13485',
+        'slug': 'iso13485',
+        'accent': 'signal',
         'date': 'Jan 2026',
         'title': 'ISO 13485 in plain terms',
         'excerpt': 'A short walkthrough of what the standard actually asks a quality system to do, without the clause-number scavenger hunt.',
+        'photo': 'https://images.unsplash.com/photo-1646956141021-d687dcfe5fb9?fm=jpg&q=70&w=900&auto=format&fit=crop',
     },
     {
         'tag': 'EU MDR',
+        'slug': 'eumdr',
+        'accent': 'pulse',
         'date': 'Dec 2025',
         'title': 'EU MDR and FDA 21 CFR 820: where the paperwork overlaps',
         'excerpt': 'Most design control evidence satisfies both frameworks at once. Here’s where the overlap actually holds and where it doesn’t.',
+        'photo': 'https://images.unsplash.com/photo-1758876020343-c8c2add9d527?fm=jpg&q=70&w=900&auto=format&fit=crop',
     },
     {
         'tag': 'Document Control',
+        'slug': 'doccontrol',
+        'accent': 'signal',
         'date': 'Nov 2025',
         'title': 'Six signs your document control process needs an upgrade',
         'excerpt': 'Version conflicts, stale approvals, and "who has the current copy" threads are usually symptoms of the same underlying gap.',
+        'photo': 'https://images.unsplash.com/photo-1764835711461-117d67799a7d?fm=jpg&q=70&w=900&auto=format&fit=crop',
     },
     {
         'tag': 'Risk Management',
+        'slug': 'riskmgmt',
+        'accent': 'pulse',
         'date': 'Oct 2025',
         'title': 'What reviewers actually look for in a risk file',
         'excerpt': 'ISO 14971 reviewers read hazard-to-mitigation traceability first. Everything else in the file supports that one thread.',
+        'photo': 'https://images.unsplash.com/photo-1518152006812-edab29b069ac?fm=jpg&q=70&w=900&auto=format&fit=crop',
     },
     {
         'tag': 'CAPA',
+        'slug': 'capa',
+        'accent': 'pulse',
         'date': 'Sep 2025',
         'title': 'Root cause analysis mistakes we see most often',
         'excerpt': 'Stopping at the first plausible cause is the most common reason a CAPA reopens six months later.',
+        'photo': 'https://images.unsplash.com/photo-1582719298866-977ee81c87d7?fm=jpg&q=70&w=900&auto=format&fit=crop',
     },
 ]
 
 RESOURCE_MEDIA = [
-    {'title': 'A tour of the workspace', 'length': '4 min'},
-    {'title': 'Design controls, start to finish', 'length': '6 min'},
-    {'title': 'What auditors ask for first', 'length': '3 min'},
+    {'title': 'A tour of the workspace', 'length': '4 min', 'photo': 'https://images.unsplash.com/photo-1646956141021-d687dcfe5fb9?fm=jpg&q=70&w=900&auto=format&fit=crop'},
+    {'title': 'Design controls, start to finish', 'length': '6 min', 'photo': 'https://images.unsplash.com/photo-1518152006812-edab29b069ac?fm=jpg&q=70&w=900&auto=format&fit=crop'},
+    {'title': 'What auditors ask for first', 'length': '3 min', 'photo': 'https://images.unsplash.com/photo-1758873263563-5ba4aa330799?fm=jpg&q=70&w=900&auto=format&fit=crop'},
 ]
 
 
