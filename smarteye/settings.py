@@ -18,7 +18,7 @@ def _env_bool(value, default=False):
     return str(value).strip().strip('"\'').lower() in ('1', 'true', 'yes', 'on', 't', 'y')
 
 
-SECRET_KEY = config('SECRET_KEY', default='django-insecure-local-development-key')
+SECRET_KEY = config('SECRET_KEY', default='') or 'django-insecure-local-development-key'
 DEBUG = _env_bool(config('DEBUG', default=''), default=False)
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='127.0.0.1,localhost', cast=Csv())
 
